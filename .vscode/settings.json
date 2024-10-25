@@ -1,0 +1,8 @@
+{
+  "eslint.workingDirectories": [
+    "./docker",
+    "./GildedRose",
+    "./typescript-ddd-cqrs-example",
+    "./typescript-ddd-example"
+  ]
+}
