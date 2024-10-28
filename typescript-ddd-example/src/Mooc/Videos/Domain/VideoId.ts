@@ -1,1 +1,1 @@
-export type VideoId = string;
+export type VideoId = number;

@@ -1,6 +1,6 @@
 export class CreateVideoDTO {
   constructor(
-    public id: string,
+    public id: number,
     public title: string,
     public duration: number,
   ) {}

@@ -1,7 +1,6 @@
-import { Controller, Get, Param, Post, Body } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post } from '@nestjs/common';
 import { CreateVideo } from '../Application/CreateVideo';
 import { SearchVideo } from '../Application/SearchVideo';
-import { Video } from '../Domain/Video';
 import { CreateVideoDTO } from '../Domain/CreateVideoDTO';
 
 @Controller()
@@ -12,8 +11,8 @@ export class VideoController {
   ) {}
 
   @Get(':id')
-  getVideo(@Param('id') id: string): Video {
-    return this.searchServ.search(id);
+  async getVideo(@Param('id') id: number) {
+    return await this.searchServ.search(id);
   }
 
   @Post()
