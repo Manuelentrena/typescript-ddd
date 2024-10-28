@@ -1,7 +1,8 @@
 import { Module } from '@nestjs/common';
 import { CreateVideo } from './Application/CreateVideo';
 import { SearchVideo } from './Application/SearchVideo';
-import { MemoryVideoRepository } from './Infraestructure/MemoryVideoRepository';
+// import { MemoryVideoRepository } from './Infraestructure/MemoryVideoRepository';
+import { DatabasePostgresRepository } from './Infraestructure/DatabasePostgresRepository';
 import { VideoController } from './Infraestructure/VideoController';
 
 @Module({
@@ -12,7 +13,7 @@ import { VideoController } from './Infraestructure/VideoController';
     {
       //Here is where I do the dependency injection, as Nestjs resolves de dependencies by name and can't infere by type
       provide: 'IVideoRepository',
-      useClass: MemoryVideoRepository,
+      useClass: DatabasePostgresRepository,
     },
   ],
 })
